@@ -19,8 +19,7 @@ FILES
   HashTable.h    Member record, Node, and our own HashTable class
   Sacco.h        The Sacco class: all operations, validation, file load and save
   Main.cpp       Menu, input checking and screen output
-  Test.cpp       The group's quick tests (20 checks)
-  TestTable.cpp  Prints the full test table (55 tests: input, expected, actual, pass/fail)
+  Test.cpp       The group's quick tests 
   members.txt    Sample data (one member per line)
 
 DATA FILE FORMAT (members.txt)
@@ -36,16 +35,12 @@ HOW TO COMPILE AND RUN
   Run these commands in the folder that contains all the files:
 
   1. Main program
-       g++ -std=c++17 -Wall -Wextra -fsanitize=address -g Main.cpp -o sacco
+       g++ -std=c++17 -Wall -g -fsanitize=address Main.cpp -o sacco
        ./sacco
 
   2. Quick tests
-       g++ -std=c++17 -Wall -Wextra -fsanitize=address -g Test.cpp -o test
+       g++ -std=c++17 -Wall -g -fsanitize=address Test.cpp -o test
        ./test
-
-  3. Full test table
-       g++ -std=c++17 -Wall -Wextra -fsanitize=address -g TestTable.cpp -o testtable
-       ./testtable
 
   The -fsanitize=address flag checks for memory leaks and invalid memory access.
   A clean run prints no error text from AddressSanitizer.
@@ -65,7 +60,3 @@ INPUT CHECKS
   phone numbers must be 10 digits, names cannot be empty or contain a comma,
   and withdrawals or transfers cannot exceed the balance. Bad input is rejected with a
   message and the program keeps running.
-
-NOTE
-  members.txt is rewritten every time you save or exit. Keep a backup copy of the
-  original sample data if you want to restore it.
